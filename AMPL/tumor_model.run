@@ -1,0 +1,11 @@
+option solver ipopt;
+solve;
+
+# Print headers
+printf "time,z0,z1,z2,z3,q,u\n";
+
+# Loop through and print the raw state and control values
+for {i in 0..N} {
+    printf "%d,%f,%f,%f,%f,%f,%f\n", 
+        i, z0[i], z1[i], z2[i], z3[i], q[i], u[i];
+}
